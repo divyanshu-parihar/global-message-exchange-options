@@ -20,7 +20,7 @@ client.on('messageCreate', (message) => {
 
         let channels = client.channels.cache.filter(ch => ch instanceof TextChannel && ch.name === message.channel.name);
         for (let recipentChannel of channels) {
-            if (recipentChannel.guildId === HostServerId) continue;
+            if (HostServerId.includes(recipentChannel.guildId)) continue;
             recipentChannel.forEach((channel)=>{
                 if(channel.id === undefined) return;;
                 client.channels.cache.get(channel.id).send({
@@ -29,7 +29,6 @@ client.on('messageCreate', (message) => {
                 });
                 console.log('confirmed')
             })
-            
         }
 
     }

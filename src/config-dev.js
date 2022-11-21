@@ -5,5 +5,5 @@ module.exports  = {
         '1043411693318975528'
     ],
     HostServerId: '943746740857761792',
-    token: process.env.TOKEN,
+    token: process.env.TOKEN
 }
